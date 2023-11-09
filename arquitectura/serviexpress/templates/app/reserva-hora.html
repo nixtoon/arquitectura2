@@ -1,3 +1,36 @@
 {% extends 'app/base.html' %}
 
 
+{% load static %}
+
+{% block title %} <title>ServiExpress | Reservar</title>{% endblock %}
+
+
+{% block contenido %}
+<br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="reserva">
+                <div class="card"> 
+                    <div class="card-header">
+                        Reserva tu hora con nosotros
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reserva de Hora ServiExpress</h5>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                  <label for="nombre" class="form-label">Nombre Completo</label>
+                                  <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+                                </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
