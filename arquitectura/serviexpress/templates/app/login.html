@@ -1,1 +1,27 @@
 {% extends 'app/base.html' %}
+
+{% block contenido %}
+<form class="row g-3 mt-3" id="main"  method="post">
+    {% csrf_token %}
+    {{ form  }}
+
+    <div class="usuario-no-creado">
+      ¿No tienes una cuenta?, registrate
+      <a href="#">
+        aquí.
+      </a>
+    </div>
+
+    <div class="usuario-no-creado">
+      ¿Quieres iniciar como
+      <a href="#">
+        artista?
+      </a>
+    </div>
+
+    <div class="d-flex justify-content-center mb-3">
+      <input class="btn btn-primary" type="submit" value="Iniciar Sesión" id="iniciar">
+    </div>
+
+  </form>
+{% endblock %}
