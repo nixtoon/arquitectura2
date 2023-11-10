@@ -37,6 +37,11 @@
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Bienvenido: {{ user.username }}</a>
+                </li>
+                {% endif %}
                 <li class="nav-item">
                   <a class="nav-link" href="/">Inicio</a>
                 </li>
@@ -45,7 +50,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sobre Nosotros</a>
-                  </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'registro' %}">Registrate</a>
+              </li>
               </ul>
               <form class="d-flex mt-3" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -53,7 +61,15 @@
               </form> <br><br>
 
               <div class="text-center">
-                <button type="button" class="btn btn-outline-success">Iniciar sesión</button>
+                {% if user.is_authenticated %}
+                <button type="button" class="btn btn-outline-danger">
+                  <a href="{% url 'logout' %}" style="text-decoration: none; color: black;">Cerrar Sesión</a>
+                </button>
+                {% else%}
+                <button type="button" class="btn btn-outline-success">
+                  <a href="{% url 'login' %}" style="text-decoration: none; color: black;">Iniciar Sesión</a>
+                </button>
+                {% endif %}
               </div>
             </div>
           </div>

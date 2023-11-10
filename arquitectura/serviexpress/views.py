@@ -14,3 +14,6 @@ def reserva_hora(request):
     context = {}
     return render(request, 'app/reserva-hora.html')
 
+def registro(request):
+    return render(request, 'registration/registro.html')
+
