@@ -8,7 +8,7 @@ class Servicio(models.Model):
   descripcion = models.TextField()
 
   def __str__(self):
-    return self.nombre
+    return self.nombre_servicio
   
 class Cliente(models.Model):
   nombre_cliente = models.CharField(max_length=50)
