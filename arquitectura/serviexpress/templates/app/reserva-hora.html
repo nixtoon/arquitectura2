@@ -1,6 +1,5 @@
 {% extends 'app/base.html' %}
 
-
 {% load static %}
 
 {% block title %} <title>ServiExpress | Reservar</title>{% endblock %}
@@ -58,13 +57,14 @@
                                 <div class="col-6">
                                     <label for="Fecha" class="form-label">Seleccione una fecha</label>
                                     <div class="input-group date">
-                                        <input type="text" class="form-control" id="datepicker" placeholder="Selecciona una fecha">
+                                        <input type="date" class="form-control" id="datepicker" placeholder="Selecciona una fecha">
                                         <div class="input-group-append">
-                                          <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                                          <span class="input-group-text"></i></span>
                                         </div>
                                       </div>
                                 </div>
-                            </div>
+                            </div><br>
+                        <button class="btn btn-outline-primary input-group fw-bold" type="button">Reservar</button>
                         </form>
                     </div>
                 </div>
