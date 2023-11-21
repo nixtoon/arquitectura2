@@ -15,9 +15,11 @@ def login(request):
 
 def reserva_hora(request):
     servicios = Servicio.objects.all()
+    facturacion = Facturacion.objects.all()
 
     data = {
-        'servicios': servicios
+        'servicios': servicios,
+        'facturacion': facturacion,
     }
     return render(request, 'app/reserva-hora.html', data)
 
@@ -79,7 +81,7 @@ def eliminar_servicio(request, id):
         servicio = get_object_or_404(Servicio, id=id)
         servicio.delete()
         messages.success(request, "Eliminado Correctamente")
-        return redirect('servicios')
+        return redirect(to='servicios.html')
     except:
         messages.warning(request, "Error al eliminar")
         servicio = Servicio.objects.all()

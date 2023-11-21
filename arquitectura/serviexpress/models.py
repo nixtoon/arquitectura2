@@ -29,9 +29,10 @@ class Facturacion(models.Model):
     return self.nombre_facturacion
   
 class Reserva_hora(models.Model):
+  nombre_cliente = models.CharField(max_length=50)
+  apellido_cliente = models.CharField(max_length=50)
   fecha = models.DateField()
   hora = models.DateTimeField()
-  cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
   servicio = models.ForeignKey(Servicio, on_delete=models.PROTECT)
   Facturacion = models.ForeignKey(Facturacion, on_delete=models.PROTECT)
 
